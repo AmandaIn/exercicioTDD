@@ -5,8 +5,10 @@ import java.util.ArrayList;
 public class Processador_Boletos {
 	
 	public ArrayList <Boleto> boletos;
+	public Fatura fatura;
 	
 	
+	/* ######Método para somar todos os boletos de uma lista de boletos######*/
 	
 	public double somatorio (ArrayList <Boleto> boletos) {
 		
@@ -20,6 +22,34 @@ public class Processador_Boletos {
 		return valor_boletos;
 		
 	}
+	
+	
+	
+	public int compara (ArrayList <Boleto> boletos, Fatura fatura) {
+		
+		int maior = 1;
+		int igual = 0;
+		int menor = -1;
+		
+		if (somatorio(boletos)== fatura.valor_total) {
+			
+			return igual;
+			
+		}
+		
+		else if (somatorio(boletos) > fatura.valor_total) {
+			
+			return maior;
+		}
+		
+		else
+			
+			return menor;
+		
+		
+	}
+	
+	
 	
 	
 	

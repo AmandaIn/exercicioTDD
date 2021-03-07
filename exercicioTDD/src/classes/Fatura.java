@@ -3,7 +3,7 @@ package classes;
 public class Fatura {
 	
 	public String data;
-	public Float valor_total;
+	public double valor_total;
 	public String nome_cliente;
 	public Boolean fatura_paga;
 	
@@ -11,11 +11,11 @@ public class Fatura {
 	
 	
 	
-	public Fatura(String data, Float valor_total, String nome_cliente, Boolean fatura_paga) {
+	public Fatura(String data, double d, String nome_cliente, Boolean fatura_paga) {
 		
 		super();
 		this.data = data;
-		this.valor_total = valor_total;
+		this.valor_total = d;
 		this.nome_cliente = nome_cliente;
 		this.fatura_paga = fatura_paga;
 		
@@ -28,7 +28,7 @@ public class Fatura {
 	public void setData(String data) {
 		this.data = data;
 	}
-	public Float getValor_total() {
+	public double getValor_total() {
 		return valor_total;
 	}
 	public void setValor_total(Float valor_total) {
