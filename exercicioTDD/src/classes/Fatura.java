@@ -10,6 +10,7 @@ public class Fatura {
 	
 	
 	
+	
 	public Fatura(String data, Float valor_total, String nome_cliente, Boolean fatura_paga) {
 		
 		super();

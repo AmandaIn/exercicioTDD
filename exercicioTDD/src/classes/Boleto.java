@@ -4,10 +4,17 @@ public class Boleto {
 	
 	public String codigo_boleto;
 	public String data;
-	public Float valor_pago;
+	public double valor_pago;
 	
 	
+		
 	
+	public Boleto(String codigo_boleto, String data, double valor_pago) {
+		super();
+		this.codigo_boleto = codigo_boleto;
+		this.data = data;
+		this.valor_pago = valor_pago;
+	}
 	public String getCodigo_boleto() {
 		return codigo_boleto;
 	}
@@ -20,25 +27,15 @@ public class Boleto {
 	public void setData(String data) {
 		this.data = data;
 	}
-	public Float getValor_pago() {
+	public double getValor_pago() {
 		return valor_pago;
 	}
-	public void setValor_pago(Float valor_pago) {
+	public void setValor_pago(double valor_pago) {
 		this.valor_pago = valor_pago;
 	}
 	
 	
-	
-	public Boleto(String codigo_boleto, String data, Float valor_pago) {
-		super();
-		this.codigo_boleto = codigo_boleto;
-		this.data = data;
-		this.valor_pago = valor_pago;
-	}
-	
-	
-	
-	
+		
 	
 	
 
