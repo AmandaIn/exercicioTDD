@@ -72,7 +72,10 @@ public class teste_processador_boleto {
 		Assertions.assertEquals(1, compara);
 		
 		
-		
+	}
+	
+	
+	
 
 	
 

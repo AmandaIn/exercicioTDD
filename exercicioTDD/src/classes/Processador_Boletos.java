@@ -24,6 +24,7 @@ public class Processador_Boletos {
 	}
 	
 	
+	/* ######Método para comparar se a soma de todos os boletos de uma lista de boletos é maior, menor ou igual ao valor total de uma fatura######*/
 	
 	public int compara (ArrayList <Boleto> boletos, Fatura fatura) {
 		
