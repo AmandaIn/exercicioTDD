@@ -92,6 +92,22 @@ public class teste_processador_boleto {
 		
 	}
 
+	@DisplayName("Testa o método que compara se o valor da soma dos boletos é igual ao valor total da fatura ")
+	@Test	
+	
+	public void compara_igual_test() {
+		fatura = new Fatura("07-03-2021", 295.00,"João", status);
+		boletos.add(boleto1);
+		boletos.add(boleto2);
+		boletos.add(boleto3);
+		
+		
+		int compara = processar.compara(boletos,fatura);
+		
+		Assertions.assertEquals(0, compara);
+		
+		
+	}
 	
 
 }
