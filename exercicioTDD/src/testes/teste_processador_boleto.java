@@ -165,6 +165,27 @@ public class teste_processador_boleto {
 	}
 	
 	
+	@DisplayName("Testa o método que paga a fatura, no quesito não pagar")
+	@Test
+	
+	public void nao_paga_fatura_test(){
+		
+		fatura = new Fatura("07-03-2021", 300.00,"João", status, pagamentos);
+		boletos.add(boleto1);
+		boletos.add(boleto2);
+		boletos.add(boleto3);
+		
+		
+		
+		Assertions.assertEquals(false, processar.paga_fatura(boletos, fatura));
+			
+			
+		
+	}
+	
+	
+	
+	
 	
 
 }
