@@ -75,7 +75,22 @@ public class teste_processador_boleto {
 	}
 	
 	
+	@DisplayName("Testa o método que compara se o valor da soma dos boletos é menor que o valor total da fatura ")
+	@Test	
 	
+	public void compara_menor_test() {
+		fatura = new Fatura("07-03-2021", 300.00,"João", status);
+		boletos.add(boleto1);
+		boletos.add(boleto2);
+		boletos.add(boleto3);
+		
+		
+		int compara = processar.compara(boletos,fatura);
+		
+		Assertions.assertEquals(-1, compara);
+		
+		
+	}
 
 	
 

@@ -31,7 +31,7 @@ public class Fatura {
 	public double getValor_total() {
 		return valor_total;
 	}
-	public void setValor_total(Float valor_total) {
+	public void setValor_total(double valor_total) {
 		this.valor_total = valor_total;
 	}
 	public String getNome_cliente() {
