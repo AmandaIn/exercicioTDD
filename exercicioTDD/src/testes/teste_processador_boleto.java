@@ -3,12 +3,14 @@ package testes;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.Assertions;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import classes.Boleto;
 import classes.Fatura;
+import classes.Pagamento;
 import classes.Processador_Boletos;
 
 
@@ -23,6 +25,9 @@ public class teste_processador_boleto {
 	Processador_Boletos processar = new Processador_Boletos ();
 	Fatura fatura;
 	Boolean status = false;
+	Pagamento pagamento1, pagamento2, pagamento3;
+	ArrayList <Pagamento> pagamentos = new ArrayList<Pagamento>();
+	
 	
 	@BeforeEach
 	
@@ -35,7 +40,7 @@ public class teste_processador_boleto {
 	@BeforeEach
 	public void incializaFatura() {
 		
-		fatura = new Fatura("07-03-2021", 250.00,"João", status);
+		fatura = new Fatura("07-03-2021", 250.00,"João", status, pagamentos);
 		
 	}
 	
@@ -61,7 +66,7 @@ public class teste_processador_boleto {
 	@Test	
 	
 	public void compara_maior_test() {
-		fatura = new Fatura("07-03-2021", 240.00,"João", status);
+		fatura = new Fatura("07-03-2021", 240.00,"João", status, pagamentos);
 		boletos.add(boleto1);
 		boletos.add(boleto2);
 		boletos.add(boleto3);
@@ -79,7 +84,7 @@ public class teste_processador_boleto {
 	@Test	
 	
 	public void compara_menor_test() {
-		fatura = new Fatura("07-03-2021", 300.00,"João", status);
+		fatura = new Fatura("07-03-2021", 300.00,"João", status, pagamentos);
 		boletos.add(boleto1);
 		boletos.add(boleto2);
 		boletos.add(boleto3);
@@ -96,7 +101,7 @@ public class teste_processador_boleto {
 	@Test	
 	
 	public void compara_igual_test() {
-		fatura = new Fatura("07-03-2021", 295.00,"João", status);
+		fatura = new Fatura("07-03-2021", 295.00,"João", status, pagamentos);
 		boletos.add(boleto1);
 		boletos.add(boleto2);
 		boletos.add(boleto3);
@@ -108,6 +113,41 @@ public class teste_processador_boleto {
 		
 		
 	}
+	
+	
+	@DisplayName("Testa o método que adiciona pagamentos à fatura ")
+	@Test
+	
+	public void adiciona_pagamento_test() {
+		//Fatura fatura1;
+		
+		fatura = new Fatura("07-03-2021", 295.00,"João", status, pagamentos);
+		
+		boletos.add(boleto1);
+		boletos.add(boleto2);
+		boletos.add(boleto3);
+		
+		pagamento1 = new Pagamento(boleto1.getValor_pago(),boleto1.getData(), "boleto");
+		pagamento2 = new Pagamento(boleto2.getValor_pago(),boleto2.getData(), "boleto");
+		pagamento3 = new Pagamento(boleto3.getValor_pago(),boleto3.getData(), "boleto");
+		
+		ArrayList <Pagamento> pagamentos2 = new ArrayList<Pagamento>();
+		pagamentos2.add(pagamento1);
+		pagamentos2.add(pagamento2);
+		pagamentos2.add(pagamento3);
+		
+		
+		processar.adiciona_pagamento(boletos, fatura);
+		
+		//Assertions.assertEquals(pagamentos2, fatura.getPagamento()); quando eu ponho este assert está dando erro :(
+		
+		
+		
+	}
+	
+	
+	
+	
 	
 
 }

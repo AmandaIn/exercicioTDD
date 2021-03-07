@@ -6,7 +6,9 @@ public class Processador_Boletos {
 	
 	public ArrayList <Boleto> boletos;
 	public Fatura fatura;
+	public ArrayList <Pagamento> pagamentos = new ArrayList<Pagamento>();
 	
+	String boleto;
 	
 	/* ######Método para somar todos os boletos de uma lista de boletos######*/
 	
@@ -52,6 +54,27 @@ public class Processador_Boletos {
 	
 	
 	
+	public Fatura adiciona_pagamento (ArrayList <Boleto> boletos, Fatura fatura) {
+		
+	//	Pagamento pagamento;
+		
+		
+		
+		for (int i=0; i < boletos.size(); i++) {
+			
+			pagamentos.add(new Pagamento(boletos.get(i).valor_pago, boletos.get(i).data, boleto));
+			
+		}
+		
+	
+		fatura.setPagamento(pagamentos);
+		
+		return fatura;
+		
+		
+		
+	}
+
 	
 	
 
