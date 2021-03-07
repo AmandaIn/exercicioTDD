@@ -145,7 +145,24 @@ public class teste_processador_boleto {
 		
 	}
 	
+
+	@DisplayName("Testa o método que paga a fatura")
+	@Test
 	
+	public void paga_fatura_test(){
+		
+		fatura = new Fatura("07-03-2021", 250.00,"João", status, pagamentos);
+		boletos.add(boleto1);
+		boletos.add(boleto2);
+		boletos.add(boleto3);
+		
+		
+		
+		Assertions.assertEquals(true, processar.paga_fatura(boletos, fatura));
+			
+			
+		
+	}
 	
 	
 	

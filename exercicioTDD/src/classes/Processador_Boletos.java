@@ -74,6 +74,22 @@ public class Processador_Boletos {
 		
 		
 	}
+	
+	public boolean paga_fatura (ArrayList <Boleto> boletos, Fatura fatura) {
+			
+		
+		if (compara(boletos, fatura)==1 || compara(boletos, fatura)==0) {
+						
+			return fatura.fatura_paga = true;
+						
+					}		
+		else
+			return fatura.fatura_paga = false;
+					
+		
+		
+		
+	}
 
 	
 	
